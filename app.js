@@ -70,28 +70,29 @@ console.log(msPreviewList);
 
 let currentIndex = 0;
 
-for (i=0; i < items.length; i++) {
+cards.forEach((Element, ) => {
 
     const msImage = document.createElement("div");
     msImage.classList.add("item");
-    msImage.innerHTML = `<img src="${items[i]}" alt="">`;
+    msImage.innerHTML = `<img src="${Element.items}" alt="">`;
     msImageWrapperContainer.append(msImage);
 
     const msPreviewImage = document.createElement("li")
     msPreviewImage.classList.add("ms_noBorder")
-    msPreviewImage.innerHTML = `<img src="${items[i]}" alt="">`;
+    msPreviewImage.innerHTML = `<img src="${Element.items}" alt="">`;
     msPreviewList.append(msPreviewImage)
-}
 
-const msTitleTest = document.createElement("h2");
-msTitle.append(msTitleTest);
+})
 
-const msDescriptionP = document.createElement("p");
-msTitle.append(msDescriptionP);
+// const msTitleTest = document.createElement("h2");
+// msTitle.append(msTitleTest);
 
-msDescriptionP.innerHTML = text[currentIndex]
+// const msDescriptionP = document.createElement("p");
+// msTitle.append(msDescriptionP);
 
-msTitleTest.innerHTML = title[currentIndex]
+// msDescriptionP.innerHTML = text[currentIndex]
+
+// msTitleTest.innerHTML = title[currentIndex]
 
 const msActiveImage = [...document.getElementsByClassName("item")];
 
