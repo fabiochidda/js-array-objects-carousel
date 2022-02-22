@@ -49,3 +49,11 @@
 .ms_border_active {
     border: 3px solid black;
 }
+
+.ms_title_not_active, .ms_text_not_active {
+    display: none;
+}
+
+.ms_active_title, .ms_active_text {
+    display: block;
+}

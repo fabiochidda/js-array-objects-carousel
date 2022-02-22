@@ -68,11 +68,7 @@ console.log(msTitle);
 const msPreviewList = document.querySelector(".ms_preview_list");
 console.log(msPreviewList);
 
-const msTitleTest = document.createElement("h2");
-msTitle.append(msTitleTest);
 
-const msDescriptionP = document.createElement("p");
-msTitle.append(msDescriptionP);
 
 let currentIndex = 0;
 
@@ -88,14 +84,29 @@ cards.forEach((Element, ) => {
     msPreviewImage.innerHTML = `<img src="${Element.items}" alt="">`;
     msPreviewList.append(msPreviewImage)
 
+    const msTitleTest = document.createElement("h2");
+    msTitleTest.classList.add("ms_title_not_active");
     msTitleTest.innerHTML = `${Element.title}`
-    msDescriptionP.innerHTML = `${Element.text}`
+    msTitle.append(msTitleTest);
 
+    const msDescriptionP = document.createElement("p");
+    msDescriptionP.classList.add("ms_text_not_active");
+    msDescriptionP.innerHTML = `${Element.text}`
+    msTitle.append(msDescriptionP);
+    
 })
 
 const msActiveImage = [...document.getElementsByClassName("item")];
 
 msActiveImage[currentIndex].classList.add("active");
+
+const msActiveTitle = [...document.getElementsByClassName("ms_title_not_active")]
+
+msActiveTitle[currentIndex].classList.add("ms_active_title")
+
+const msActiveText = [...document.getElementsByClassName("ms_text_not_active")]
+
+msActiveText[currentIndex].classList.add("ms_active_text")
 
 const msPreviewImage = [...document.getElementsByClassName("ms_noBorder")]
 
@@ -107,11 +118,13 @@ msPrevImage.addEventListener("click", function() {
 
     msActiveImage[currentIndex].classList.remove("active");
     msPreviewImage[currentIndex].classList.remove("ms_border_active")
+    msActiveTitle[currentIndex].classList.remove("ms_active_title")
+    msActiveText[currentIndex].classList.remove("ms_active_text")
     currentIndex--;
     msActiveImage[currentIndex].classList.add("active");
     msPreviewImage[currentIndex].classList.add("ms_border_active")
-    msTitleTest.innerHTML = title[currentIndex];
-    msDescriptionP.innerHTML = text[currentIndex];
+    msActiveTitle[currentIndex].classList.add("ms_active_title")
+    msActiveText[currentIndex].classList.add("ms_active_text")
 
 })
 
@@ -121,10 +134,12 @@ msNextImage.addEventListener("click", function() {
 
     msActiveImage[currentIndex].classList.remove("active");
     msPreviewImage[currentIndex].classList.remove("ms_border_active")
+    msActiveTitle[currentIndex].classList.remove("ms_active_title")
+    msActiveText[currentIndex].classList.remove("ms_active_text")
     currentIndex++;
     msActiveImage[currentIndex].classList.add("active");
     msPreviewImage[currentIndex].classList.add("ms_border_active")
-    msTitleTest.innerHTML = title[currentIndex];
-    msDescriptionP.innerHTML = text[currentIndex];
+    msActiveTitle[currentIndex].classList.add("ms_active_title")
+    msActiveText[currentIndex].classList.add("ms_active_text")
 
 })
