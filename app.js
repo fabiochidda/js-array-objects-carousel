@@ -68,6 +68,12 @@ console.log(msTitle);
 const msPreviewList = document.querySelector(".ms_preview_list");
 console.log(msPreviewList);
 
+const msTitleTest = document.createElement("h2");
+msTitle.append(msTitleTest);
+
+const msDescriptionP = document.createElement("p");
+msTitle.append(msDescriptionP);
+
 let currentIndex = 0;
 
 cards.forEach((Element, ) => {
@@ -82,17 +88,10 @@ cards.forEach((Element, ) => {
     msPreviewImage.innerHTML = `<img src="${Element.items}" alt="">`;
     msPreviewList.append(msPreviewImage)
 
+    msTitleTest.innerHTML = `${Element.title}`
+    msDescriptionP.innerHTML = `${Element.text}`
+
 })
-
-// const msTitleTest = document.createElement("h2");
-// msTitle.append(msTitleTest);
-
-// const msDescriptionP = document.createElement("p");
-// msTitle.append(msDescriptionP);
-
-// msDescriptionP.innerHTML = text[currentIndex]
-
-// msTitleTest.innerHTML = title[currentIndex]
 
 const msActiveImage = [...document.getElementsByClassName("item")];
 

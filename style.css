@@ -15,10 +15,15 @@
 
 .ms_image_wrapper img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .item {
     display: none;
+    width: 100%;
+    height: 615px;
 }
 
 .active {
